@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(252, 247, 203);
+  box-sizing: border-box;
+  font-family: Roboto;
+  user-select:none;
+}
+
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.title{
+  position: absolute;
+  font-size: 80px;
+  top: 30px;
+  color: #ffa500;
+}
+
+.list-tasks{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 540px;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  background-color: #fafafa;
+  font-weight: 600;
+  box-shadow: inset 0 -1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.task:nth-last-child(-n+1){
+  border-bottom: none;
+}
+
+.task .task-check{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.task-checked {
+  font-style: italic;
+  text-decoration: line-through;
+  color: rgba(0,0,0,0.5);
+}
+
+.task .trash-btn{
+  font-size: 20px;
+  height: 60px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 93, 93);
+  color: white;
+  cursor: pointer;
+  border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+.task .trash-btn:hover{
+  background-color: rgb(253, 41, 41);
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form #inputText{
+  min-width: 500px;
+  padding: 10px;
+  padding-right: 20px;
+  border-radius: 4px 0px 0px 4px;
+  outline: none;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-right: none;
+  background-color: #fafafa;
+  color: rgb(0, 0, 0);
+  box-shadow:  0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+#inputText::placeholder{
+  color: black;
+}
+
+#plusBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 46px;
+  border-radius: 0px 4px 4px 0px;
+  background-color: #ffa500;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow:  0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+#plusBtn:hover{
+  background-color: #ffa600e0;
+}
+
+#plusBtn p{
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 1px rgba(0,0,0,0.3);
+}
